@@ -77,7 +77,7 @@ def handle_download_friendchat(msg):
         }
     )
 
-    # 删除过期记录
+    # # 删除过期记录
     # for mid in list(msg_info.keys()):
     #     if (msg_info[mid].get('msg_time') < time.time()-120):
     #         # 删除记录，以及对应的文件（略）
