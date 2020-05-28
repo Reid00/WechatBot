@@ -1,8 +1,10 @@
+import time
 import re
 import itchat
 import pandas as pd
 import jieba.analyse
 import matplotlib.pyplot as plt
+from pathlib import Path
 from collections import Counter
 from wordcloud import WordCloud
 from skimage import io
@@ -16,7 +18,7 @@ class Wechat:
 
     def __init__(self):
         print('login...')
-        itchat.auto_login(hotReload=True)
+        itchat.auto_login(enableCmdQR=True,hotReload=True)
         self.friends = itchat.get_friends(update=True)
         # print(self.friends)
 
@@ -112,11 +114,7 @@ class Wechat:
         plt.title(f'{self.friends[0]["NickName"]}的微信好友签名信息情感分析')
         plt.show()
         
-        
-        
-
 
 if __name__ == "__main__":
     wechat = Wechat()
-    # wechat.analyse_gender()
-    wechat.analyse_signature()
+    wechat.analyse_gender()
