@@ -52,6 +52,7 @@ def flush_account(nick_account_map: dict):
 def load_account():
     path = rev_tmp_dir + "account.json"
     if not os.path.exists(path):
+        print(f"no account json, init account")
         return
     with open(rev_tmp_dir + "account.json", "r", encoding="utf-8") as f:
         nick_account_map= json.load(f)
